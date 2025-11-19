@@ -1,3 +1,15 @@
 spring:
   application:
     name: spring-crud-server
+  datasource:
+    url: jdbc:mysql://localhost:3306/todo_app_db
+    username: root
+    password: root@123
+
+  jpa:
+    hibernate:
+      ddl-auto: update # create (Deletes existing tables and recreates them from entities every time the app runs) - (First-time development or testing — NOT for real data) / update (Updates the database schema without deleting data) - (Best for development (safest and most common)) / validate (Compares entity models with the database; throws an error if mismatch) - (For production — ensures schema integrity) / create-drop (Same as create, but also deletes tables when the app stops) - (For unit tests or temporary test environments) / none (Hibernate does nothing with the schema) - (Use when Flyway or Liquibase manages database migrations)
+    show-sql: true # Show SQL queries in console
+    properties:
+      hibernate:
+        format_sql:true # Pretty print SQL
